@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="title">
+  <h1> Welcome to My baking Company</h1>
+</div>
+
+<div>
+  <div class="ingredient">
+    <div *ngFor="let name of ingradients; let in = index;">
+      <input type="checkbox" (change)="changeCheckedBox($event,in)" [checked]=isUsed[in]> {{name}} <br>
+
+    </div>
+
+  </div>
+
+  <div class="transfer">
+
+    <i class="fas fa-arrow-right" style="font-size: 50px;" (click)="judge()"></i>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <i class="fas fa-arrow-left" style="font-size: 50px;" (click)="undo()"></i>
+  </div>
+
+  <div class="oven">
+    <img src="../../assets/oven.gif" height="281" width="500"/>
+  </div>
+</div>
+
+<div>
+  <div *ngIf="result == -1"><img src="../../assets/emptyPlate.jpg" class = "dish"/></div>
+
+  <div *ngIf="result == 0"><img src="../../assets/boom.jpg" class = "dish"/></div>
+  <div *ngIf="result == 1"><img src="../../assets/strawberrypie.jpg" class = "dish"/></div>
+
+  <div *ngIf="result == 2"><img src="../../assets/bananapie.jpg" class = "dish" /></div>
+
+  <div *ngIf="result == 3"><img src="../../assets/sbpie.jpg" class = "dish"/></div>
+
+</div>
